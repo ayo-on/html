@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>media query</title>
+</head>
+<style>
+    body {
+        display: flex;
+      }
+      
+      div {
+        background: pink;
+      }
+      
+     @media screen and (min-width : 600px ) {
+        p {
+            background-color: yellowgreen
+        }
+     }
+      @media (orientation: landscape) {
+        body {
+          flex-direction: row;
+        
+        }
+     }
+      
+      @media (orientation: portrait) {
+        body {
+          flex-direction: column;
+        }
+      }
+
+      input[type="checkbox"] {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            border: solid;
+            margin: 0;
+        }
+
+    input[type="checkbox"]:checked {
+        background: blue;
+    }
+
+    @media (pointer: fine) {
+        input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+        border-width: 1px;
+        border-color: blueviolet;
+        }
+    }
+
+    @media (pointer: coarse) {
+        input[type="checkbox"] {
+        width: 30px;
+        height: 30px;
+        border-width: 2px;
+        border-color: yellow;
+        }
+    }
+        
+    div.example {
+          background-color: powderblue;
+          padding: 50px;
+        }
+
+    @media screen and (max-width: 600px) {
+          div .example {
+            display: none;
+          }
+        }
+        
+    @media print {
+        body {
+            font-size: 30pt;
+        }
+    }
+    </style>
+
+<body>
+    <p>[피곤한 하루]<br><br>
+        <div><b>나는 누구인가</b><br></div>
+        <div><em>여긴 어디일까</em><br></div>
+        <div><strong>어쩌다가 나는 여기까지 왔을까<br><br></strong></div>
+        <br>
+        
+    <오늘의 할일><br>
+    
+        <input id="test" type="checkbox" />
+        <label for="test">CHECK!</label>
+        <br><br>
+ 
+    주말의 할일<br>
+        <div class="example">많음.</div>
+        <br>  
+    ....벌써 피곤하다.
+</body>
+</html>
