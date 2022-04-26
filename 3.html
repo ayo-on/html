@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box model</title>
+    <style>
+        #container {
+            animation-name: box_ani;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes box_ani {
+            from{
+                margin-left: 0;
+            }
+            to{
+                margin-left: 200px;
+            }
+            
+        }
+
+        img{
+            float:left;
+            margin-right:50px;
+            margin-bottom: 10px;
+        }
+
+        #text {
+            z-index: 1;
+            }
+    </style>
+    <link rel="stylesheet" type="text/css" href="3.css">
+</head>
+
+<body>  
+    <div id="header">
+<h1>My Favorite 😘
+</h1>
+    </div>
+
+    <div id="container">
+        <img src=".\data\1.jpg" id="1" width="200">
+        <img src=".\data\2.jpg" id="2" width="200">
+        <img src=".\data\3.jpg" id="3" width="200">
+    </div>
+    <div id="text">
+        <p> 친구랑 데이트😘<br> 
+            BTS 지민이의 짧은 새끼손가락😍<br> 
+            이모보다 아이스크림이 좋은 조카💕
+        </p>
+    </div>
+
+    <div id="footer">
+<h2>정아윤</h2>
+<h4>dlbia29@naver.com</h4>
+        </div>
+
+</body>
+</html>
