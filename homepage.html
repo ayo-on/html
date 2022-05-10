@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9mediaquery</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* 전체 부분 담당 */
+        body {
+            font-family: 'Gill Sans';
+            margin: 0;
+            color: white;
+        }
+
+        /* 헤더 및 로고 부분 담당*/
+        .header {
+            padding: 30px;
+            text-align: center;
+            background: #7f00b2;
+            color: white;
+        }
+
+        /* 내비게이션 바 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(33, 33, 33);
+            font-weight: bold;
+        }
+
+        /* 내비게이션 바 메뉴 */
+        .navbar a {
+            color: #ffffff;
+            margin: 20px;
+            padding: 10px 10px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        /* 내비게이션 바 메뉴 호버 */
+        .navbar a:hover {
+            background-color: white;
+            color: #b700ff;
+        }
+
+        /* 컨테이너 정렬 설정 */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* 좌단 바 설정 */
+        .side {
+            flex: 15%;
+            background-color: #9e1bd1;
+            padding: 20px;
+        }
+
+        /* 메인 설정 */
+        .main {
+            flex: 70%;
+            background-color: #af19ea;
+            padding: 20px;
+        }
+
+        /* 이미지 대체 */
+        .img {
+            text-align: center;
+            background-color: #c941ff;
+            width: 100%;
+            padding: 20px;
+        }
+
+        /* 푸터 부분 담당 */
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: rgb(33, 33, 33);
+        }
+
+        /* 모바일 화면으로 최적화 */
+        @media screen and (max-width: 768px) {
+
+            .container,
+            .navbar {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <div class="header">
+        <h1>Who am I?</h1>
+        <p>Ayoon Jung</p>
+    </div>
+
+    <!-- 내비게이션 바 -->
+    <div class="navbar">
+        <a href="#">PROFILE</a>
+        <a href="#">HOBBY</a>
+        <a href="#">FAVORITE</a>
+        <a href="#">PROS AND CONS</a>
+    </div>
+
+    <!-- 컨테이너와 메인 구성 -->
+    <div class="container">
+        <div class="side">
+            <h2>ayoon</h2>
+            <h3>나는 누구인가</h3>
+            <div class="img" style="height:200px;">img</div>
+            <p>안녕하세요, 정아윤입니다:)</p>
+            <h3>취미</h3>
+            <div class="img" style="height:60px;">img</div><br>
+            <div class="img" style="height:60px;">img</div><br>
+            <div class="img" style="height:60px;">img</div><br><br>
+            <div class="login-form">
+                <form id="login" method="get">
+                    아 이 디 : <input type="text" name="id" class="text-field" placeholder="아이디"> <br>
+                    비밀번호: <input type="password" name="password" class="text-field" placeholder="비밀번호"><br><br>
+                    <input type="submit" value="로그인" class="submit-btn">
+                </form> 
+                <div id="empty">
+        
+                </div>
+             </div>
+        
+            <script>
+                document.getElementById('login').onsubmit = function() {
+                    var inputId = this.id.value
+                    var inputPw = this.password.value
+        
+                    console.log(inputId)
+                    console.log(inputPw)
+        
+                    var adminId, adminPw;
+                    adminId= '세젤예';
+                    adminPw = 'ayoon';
+        
+                    if (adminId == inputId ) {
+                        if (adminPw == inputPw) {
+                            var p = document.querySelector('#empty')
+                            p.textContent = inputId+'님 로그인 성공'
+        
+                        } else {
+                            var p = document.querySelector('#empty')
+                            p.textContent = inputId+'님 비밀번호가 틀렸습니다'
+                        }
+                    } else {
+                        var p = document.querySelector('#empty')
+                        p.textContent = inputId+'는 없는 ID입니다'
+                    }
+                    return false;
+                }
+        
+                
+            </script>
+        </div>
+        <div class="main">
+            <h2>좋아하는 것</h2>
+            <h3>조카덕후</h3>
+            <div class="img" style="height:200px;"><img src=".\data\3.jpg" id="3" width="200"></div>
+            <p>이모보다 아이스크림을 좋아하는 내 첫사랑 첫조카💕</p>
+            <br>
+            
+            <h2>장단점</h2>
+            <h3>Because vs Thanks to </h3>
+            <div class="img" style="height:200px;">img</div>
+            <p>희로애락을 크게 느끼는 것 때문에 감정을 잘 숨기지 못하고 얼굴에 많이 드러나요...</p>
+            <p>그래도 그 덕분에 더 진솔한 사람이 될 수 있고, 밝고 긍정적이 되려 노력하고 있습니다!</p>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <div class="footer">
+        <h2>dlbia29@naver.com</h2>
+    </div>
+
+</body>
+
+</html>
