@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>box model</title>
+    
+    <style>
+        #container {
+            animation-name: box_ani;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes box_ani {
+            from{
+                margin-left: 0;
+            }
+            to{
+                margin-left: 200px;
+            }
+            
+        }
+
+        img{
+            float:left;
+            margin-right:50px;
+            margin-bottom: 10px;
+        }
+
+        #text {
+            z-index: 1;
+            }
+    </style>
+    <link rel="stylesheet" type="text/css" href="3.css">
+</head>
+
+<body>  
+    <div id="header">
+<h1>My Favorite 😘
+</h1>
+    </div>
+
+    <div id="container" style="inline-size: auto;">
+        <article id="divs">
+            <div class="special" style='border: 0.5px dashed black; width:205px; height:300px'>
+                <img src=".\data\1.jpg" id="1" width="200"> 친구랑 데이트❤️
+            </div>
+            <div class="special"style='border: 0.5px dashed black; width:205px; height:230px'>
+                <img src=".\data\2.jpg" id="2" width="200"> bts 지민이의 새끼손가락😍
+            </div>
+            <div style='border: 0.5px dashed black; width:206px; height:250px'>
+                <img src=".\data\3.jpg" id="3" width="200"> 이모보다 아이스크림이 좋은 조카💕
+            </div>
+        </article>
+    </div>
+
+    <div id="footer">
+<h2>정아윤</h2>
+<h4>dlbia29@naver.com</h4>
+        </div>
+        <div class="login-form">
+            <form id="login" method="get">
+                아이디 : <input type="text" name="id" class="text-field" placeholder="아이디"> <br>
+                비밀번호: <input type="password" name="password" class="text-field" placeholder="비밀번호">
+                <input type="submit" value="로그인" class="submit-btn">
+            </form> 
+            <div id="empty">
+    
+            </div>
+    
+         </div>
+    
+        <script>
+            document.getElementById('login').onsubmit = function() {
+                var inputId = this.id.value
+                var inputPw = this.password.value
+    
+                console.log(inputId)
+                console.log(inputPw)
+    
+                var adminId, adminPw;
+                adminId= '세젤예';
+                adminPw = 'ayoon';
+    
+                if (adminId == inputId ) {
+                    if (adminPw == inputPw) {
+                        var p = document.querySelector('#empty')
+                        p.textContent = inputId+'님 로그인 성공'
+    
+                    } else {
+                        var p = document.querySelector('#empty')
+                        p.textContent = inputId+'님 비밀번호가 틀렸습니다'
+                    }
+                } else {
+                    var p = document.querySelector('#empty')
+                    p.textContent = inputId+'는 없는 ID입니다'
+                }
+                return false;
+            }
+    
+            
+        </script>
+</body>
+</html>
