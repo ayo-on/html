@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COUNTER</title>
+    <style>
+        body {
+            background-color: aqua;
+            font-size: 90px;
+            color: #424242;
+            /* display: ; */
+            align-items: center;
+        }
+
+        .bodyColor {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body class="theBody">
+    <center>
+    <div id ="num">
+    0
+    
+    </div>
+    <p></p>
+    <div id="'btn">
+        <button onclick="increase()"> + 1 </button>
+        <button onclick="decrease()"> - 1 </button><br>
+        <button onclick="reset()"> RESET </button>
+        <button onclick="bgColor1()"> BGColor </button>
+        <button onclick="bgColor2()"> BGColor2 </button>
+    </div>
+    </center>
+
+    <script>
+        var num = document.querySelector('#num')
+
+        function increase() {
+            num.innerText = ++num.innerText
+        }
+
+        function decrease() {
+            if (num.innerText <= 0) {
+            num.innerText = 0
+            } else {    
+            num.innerText = --num.innerText
+            }
+        }
+
+        function reset() {
+            num.innerText = 0
+    }
+var Color = ['pink', 'powderblue', 'orange', 'violet', 'yellow'] 
+    var i = 0;
+function bgColor1() {
+    document.body.style.backgroundColor = Color[i];   
+    i++;
+    if (i == Color.length) {
+        i = 0;
+    }
+}
+
+function bgColor2() {
+    var theBody = document.querySelector('.theBody')
+    theBody.classList.toggle("bodyColor")
+}
+
+</script>
+</body>
+</html>
